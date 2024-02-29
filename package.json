@@ -45,7 +45,7 @@
     "@storybook/addon-links": "^6.4.10",
     "@storybook/builder-webpack5": "^6.4.10",
     "@storybook/manager-webpack5": "^6.4.10",
-    "@storybook/vue3": "^6.4.12",
+    "@storybook/vue3": "^7.6.17",
     "@types/node": "^12.20.21",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
