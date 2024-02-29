@@ -1,0 +1,18 @@
+/* app global css */
+@font-face {
+	font-family: vazir-reqular;
+	src: url(./fonts/Vazir-Regular.woff);
+}
+.text-normal {
+	font-family: 'vazir-regular';
+}
+
+@font-face {
+	font-family: vazir-bold;
+	src: url(./fonts/Vazir-Bold.woff);
+}
+
+// declare a class which applies it
+.text-bold %text-bold {
+	font-family: 'vazir-bold';
+}

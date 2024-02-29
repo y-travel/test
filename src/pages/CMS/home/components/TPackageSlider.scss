@@ -1,0 +1,140 @@
+.back-slider-category {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.carousel__slide {
+	padding: 5px;
+	width: 30%;
+	opacity: 0.5;
+	border-radius: 15px;
+	position: relative;
+}
+.slider-tour-section {
+	background: #fff !important;
+	width: 100% !important;
+}
+
+.carousel__viewport {
+	/* perspective: 2000px; */
+}
+
+.carousel__track {
+	/* transform-style: preserve-3d; */
+}
+
+.carousel__slide--sliding {
+	transition: 0.5s;
+}
+
+.carousel__slide {
+	opacity: 0.9;
+	/* transform: rotateY(-20deg) scale(0.9); */
+}
+
+.carousel__slide--active ~ .carousel__slide {
+	/* transform: rotateY(20deg) scale(0.9); */
+}
+
+.carousel__slide--prev {
+	opacity: 1;
+	left: 0;
+	/* transform: rotateY(-10deg) scale(0.95); */
+}
+
+.carousel__slide--next {
+	opacity: 1;
+	right: 0;
+	/* transform: rotateY(10deg) scale(0.95); */
+}
+
+.carousel__slide--active {
+	opacity: 1;
+	/* transform: rotateY(0) scale(1.1); */
+}
+.sale {
+	background: #ff4f5a;
+	color: #fff;
+	padding: 6px;
+	gap: 5px;
+}
+.text-sale-hotel {
+	width: 55%;
+}
+.header-slider-tour {
+	width: 100%;
+	height: 249px;
+	z-index: -1;
+	position: relative;
+	z-index: 2;
+	.photo-header {
+		width: 100%;
+		height: 249px;
+	}
+}
+.body-slider-tour {
+	background: #fff;
+	width: 95%;
+	margin-top: -36px;
+	position: relative;
+	z-index: 9;
+	margin-left: 5px;
+	border-radius: 50px;
+	display: flex;
+	flex-direction: column;
+}
+.price {
+	display: flex;
+	justify-content: space-between;
+}
+.name-tour-slider {
+	display: flex;
+	justify-content: space-between;
+}
+.text-header {
+	font-size: 18px;
+}
+.detaile-hotel-slider {
+	width: 100%;
+	position: absolute;
+	top: 10px;
+	display: flex;
+	gap: 5px;
+	justify-content: space-between;
+}
+.reservation-hotel {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.start-price {
+	color: #787878;
+	font-size: 11px;
+}
+.reserv {
+	position: absolute;
+	bottom: 10px;
+	background: #fff;
+	padding: 10px;
+	border-radius: 16px;
+	width: 78%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.name-tours {
+	display: flex;
+	width: 100%;
+	justify-items: center;
+	align-items: center;
+	font-weight: 700;
+	font-size: 20px;
+}
+.text-name-hotel {
+	color: #fff;
+	text-align: center;
+}
+.rectungle-photo {
+	border-radius: 15px;
+}

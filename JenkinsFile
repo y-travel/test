@@ -1,0 +1,121 @@
+/* groovylint-disable LineLength, NestedBlockDepth */
+boolean deployToProd = false
+pipeline {
+    agent any
+
+    environment {
+        ENV_NAME = ''
+        DEV_BRANCH_NAME = 'develop'
+        PROD_BRANCH_NAME = 'master'
+        DEPLOY_PATH = 'C:/Users/Admin/Desktop/ProgramFiles/nginx/www'
+    }
+
+    parameters {
+        choice(name: 'Env', choices: ['stage', 'development'], description: 'Select one of the environment types.')
+
+        string(name: 'CUSTOM_BRANCH', defaultValue: '', description: 'e.g. feature/add__package')
+    }
+
+    stages {
+        stage('Init') {
+            steps {
+                script {
+                        /* groovylint-disable-next-line DuplicateStringLiteral */
+                        ENV_NAME = "${params.Env}" == 'stage' ? 'production' : "${params.Env}"
+                }
+            }
+        }
+
+        stage('Cloning Git') {
+            steps {
+                script {
+                    branchName = "${ENV_NAME}" == 'development' ? "${DEV_BRANCH_NAME}" : "${PROD_BRANCH_NAME}"
+
+                    branchName = "${params.CUSTOM_BRANCH}" != '' ? CUSTOM_BRANCH : branchName
+
+                    echo "${ENV_NAME} is running. Cloning from ${branchName} to "
+                    dir("taha-web-${params.Env}") {
+                        git branch: branchName, url: 'https://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@github.com/y-travel/taha-web.git'
+                    }
+                }
+            }
+        }
+
+        stage('Install dependencies') {
+            steps {
+                script {
+                    withEnv(["NODE_ENV=${ENV_NAME}"]) {
+                        dir("taha-web-${params.Env}") {
+                            bat 'yarn install --production=false'
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    withEnv(["NODE_ENV=${ENV_NAME}"]) {
+                        dir("taha-web-${params.Env}") {
+                            bat 'yarn build-prod'
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Copy to destination') {
+            steps {
+                script {
+                    dir("taha-web-${params.Env}") {
+                            destinationPath = "${DEPLOY_PATH}/taha-${params.Env}/app"
+                            bat "rd \"${destinationPath}\" /S /Q"
+                            bat "xcopy \"dist/pwa\" \"${destinationPath}\" /E /Y /I" //E=copy dir&subdir,Y=dont ask, I=destination is dir create if not exist
+                    }
+                }
+            }
+        }
+
+        stage('production') {
+            stages {
+                stage('Deploy to production?') {
+                    steps {
+                        script {
+                            try {
+                                input 'Deploy to Production?'
+                                deployToProd = true
+                            } catch (e) {
+                                deployToProd = false
+                            }
+
+                            echo "deploy to production is ${deployToProd}"
+                        }
+                    }
+                }
+                stage('Copy to production') {
+                    steps {
+                        script {
+                            if (!deployToProd) {
+                                echo 'production deployment canceled.'
+                                return
+                            }
+                            dir("taha-web-${params.Env}") {
+                                destinationPath = "${DEPLOY_PATH}/taha-prod/app"
+                                bat "rd \"${destinationPath}\" /S /Q"
+                                bat "xcopy \"dist/pwa\" \"${destinationPath}\" /E /Y /I" //E=copy dir&subdir,Y=dont ask, I=destination is dir create if not exist
+                            }
+                            echo 'production successfully deployed .'
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('ending') {
+            steps {
+                echo 'the end.'
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"extends": "@quasar/app/tsconfig-preset",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"target": "ESNext",
+		"jsx": "preserve",
+		"paths": {
+			"services": ["src/services/index.ts"],
+			"utils": ["src/utils/index.ts"],
+			"services/*": ["src/services/*"],
+			"utils/*": ["src/utils/*"],
+			"boot/*": ["src/boot/*"],
+			"@components/*": ["src/components/*"],
+			"@components": ["src/components/index.ts"],
+			"@/*": ["*"]
+		},
+		"noImplicitAny": true
+	},
+	"vueCompilerOptions": {
+		"plugins": ["@volar/vue-language-plugin-pug"]
+	},
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue", "src/global.d.ts"]
+}

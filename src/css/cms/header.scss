@@ -1,0 +1,281 @@
+@use 'vars' as v;
+$color_1: #fff;
+.logo {
+	height: 60px;
+	position: relative;
+	width: 300px;
+	.logo_heading {
+		background: var(--img-logo) 50% no-repeat;
+		background-size: 150px;
+		border-bottom: 1px solid #5d6a6e;
+		display: block;
+		height: 59px;
+		transition: all 0.15s ease-in-out;
+		width: 270px;
+		a {
+			color: v.$color_2;
+			display: block;
+			font-size: 12px !important;
+			height: 100%;
+			text-indent: -99999em;
+			width: 100%;
+		}
+	}
+	&:hover {
+		.logo_heading {
+			opacity: 0.9;
+		}
+	}
+	.demo_website {
+		background: #5d6a6e;
+		border-radius: 0 0 2px 2px;
+		bottom: -22px;
+		color: v.$color_3;
+		font-weight: 700;
+		height: 20px;
+		padding: 0 5px;
+		position: absolute;
+		right: 0;
+		small {
+			font-weight: 400;
+		}
+	}
+	.r_init {
+		border-bottom: 1px solid #5d6a6e;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#r_01_01 {
+		display: inline-block;
+		float: right;
+		height: 60px;
+		line-height: 60px;
+		padding: 17px 0;
+		position: relative;
+		text-align: right;
+		width: auto;
+		padding-right: 0px;
+		.r_box {
+			border-bottom: none;
+		}
+		.phone_number {
+			display: inline-block;
+			float: left;
+			height: 35px;
+			left: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			top: 0;
+			width: 35px;
+			.back_bg {
+				display: none;
+				&:before {
+					display: none;
+				}
+			}
+			.text {
+				display: none;
+			}
+			&:before {
+				display: none;
+			}
+			.cmsIcon-telephone {
+				color: v.$color_1;
+				display: block !important;
+				font-size: 16px;
+				left: 0;
+				line-height: 32px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 35px;
+			}
+			a {
+				display: block !important;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.r_left {
+			display: inline-block;
+			float: left;
+			height: 35px;
+			left: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			top: 0;
+			width: 35px;
+			width: 70px !important;
+		}
+		.r_right {
+			display: inline-block;
+			float: left;
+			height: 35px;
+			left: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			top: 0;
+			width: 35px;
+		}
+		.search_btn {
+			right: 0;
+			margin-top: 0;
+			height: 35px;
+			position: absolute;
+			top: 0;
+			width: 35px;
+			span {
+				font-size: 16px;
+				left: 0;
+				line-height: 33px;
+				position: absolute;
+				top: 0;
+				width: 35px;
+			}
+		}
+		.user_access {
+			height: 35px;
+			position: absolute;
+			top: 0;
+			width: 35px;
+			display: inline-block !important;
+			margin: 0;
+			right: 0;
+			.name_btn {
+				height: 35px;
+				min-width: 35px;
+				position: relative;
+				width: 35px;
+				a {
+					display: block !important;
+				}
+			}
+			.cmsIcon-user {
+				font-size: 16px;
+				left: 0;
+				line-height: 28px;
+				margin: 0 auto;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 100%;
+			}
+			.text {
+				display: block !important;
+			}
+		}
+		.sub_user_access {
+			display: none !important;
+		}
+		ul.main {
+			height: 100%;
+			margin-top: 50px;
+			overflow-y: scroll;
+			width: 100%;
+			> li {
+				border-bottom: none !important;
+				color: v.$color_1;
+				display: block;
+				float: none !important;
+				height: 40px !important;
+				line-height: 40px !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				position: relative;
+				width: 100%;
+				&:not(.check_reserve) {
+					&:hover {
+						border-bottom: none !important;
+					}
+				}
+			}
+			> li.check_reserve {
+				> div {
+					background: transparent;
+					border-radius: 0;
+					color: v.$color_1;
+					height: 40px;
+					line-height: 40px;
+					margin-top: 0;
+					min-width: 100%;
+					overflow: hidden;
+					padding: 0;
+					text-align: center;
+					width: 100%;
+					form {
+						display: none;
+					}
+				}
+				.alert {
+					display: none;
+				}
+				.name {
+					&:before {
+						display: none;
+					}
+					height: 40px;
+					line-height: 40px;
+					margin: 0;
+					text-align: center;
+					width: 100%;
+				}
+				&:before {
+					display: none;
+				}
+			}
+			> li.m_box {
+				> a {
+					&:before {
+						display: none;
+					}
+				}
+			}
+			> li.active {
+				border-bottom: none !important;
+				background: #ff515b;
+			}
+			&:hover {
+				> li {
+					&:not(.check_reserve) {
+						border-bottom: none !important;
+						color: v.$color_1 !important;
+					}
+				}
+			}
+		}
+		.sub_menu {
+			display: none !important;
+		}
+	}
+	.overflow_hidden {
+		height: 100%;
+		overflow: hidden !important;
+		transition: none !important;
+		width: 100%;
+	}
+	.logo {
+		height: 60px;
+		overflow: hidden;
+		padding: 0;
+		width: 110px;
+		a {
+			display: block;
+			height: 100%;
+		}
+		.logo_heading {
+			background-position: 100%;
+			background-size: 100px;
+			border-bottom: none;
+			width: 100%;
+		}
+	}
+}
+@media only screen and (min-width: 1025px) {
+	.logo {
+		padding-left: 30px;
+	}
+}

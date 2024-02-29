@@ -1,0 +1,20 @@
+.description-home-page {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	.title-desc-home {
+		color: #757575;
+		font-size: 18px !important;
+		text-align: right !important;
+	}
+	p {
+		color: #949494;
+		font-size: 14px;
+		line-height: 30px;
+		text-align: justify;
+	}
+}
+.show-desc-home {
+	padding-top: 30px;
+}

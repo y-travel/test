@@ -1,0 +1,64 @@
+@import '../quasar.variables.scss';
+@import '../vars.scss';
+
+:root {
+	--button-border-radius: #{$button-border-radius};
+	--button-rounded-border-radius: #{$button-rounded-border-radius};
+	--button-padding: #{$button-padding};
+	--button-font-size: #{$button-font-size};
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.line {
+	border-color: lightgrey;
+	border-bottom: 0;
+	border-style: solid;
+}
+.bread_crumb {
+	height: 50px;
+	box-shadow: none;
+	background-color: lightgrey;
+}
+
+.header-md {
+	font-size: 16px;
+	font-family: $font-family-bold;
+}
+.header-xl {
+	font-size: 20px;
+	font-family: $font-family-bold;
+}
+
+.text-align-right {
+	text-align: right;
+}
+.text-align-left {
+	text-align: left;
+}
+.text-align-justify {
+	text-align: justify;
+}
+.text-h7 {
+	font-size: 16px;
+}
+
+// quasar classes scss variable rewrited by css var
+.q-btn {
+	&--rectangle {
+		border-radius: var(--button-border-radius);
+	}
+	&--rounded {
+		border-radius: var(--button-rounded-border-radius);
+	}
+	padding: var(--button-padding);
+	font-size: var(--button-font-size);
+}
+.q-img {
+	border-radius: var(--button-border-radius);
+}
+.q-btn--outline:before {
+	border: 1px solid lightgray;
+}

@@ -1,0 +1,62 @@
+.top-card {
+	margin-top: -8rem;
+}
+// style searcch advance
+.search-advance {
+	width: 100%;
+	display: flex;
+	gap: 20px;
+}
+.chooseSelect {
+	width: 25%;
+	border: 1px solid #fff;
+	background: #fff !important;
+	border: 1px solid #d1d1d1 !important;
+}
+.btn-primary-link {
+	background-color: #fb373e;
+	border-color: #fb373e;
+	color: #fff;
+	width: 25%;
+	border-radius: 10px;
+}
+.title-tab-link {
+	padding: 15px;
+}
+.q-tabs.row.no-wrap.items-center.q-tabs--not-scrollable.q-tabs--horizontal.q-tabs__arrows--inside.q-tabs--dense.text-grey {
+	width: 50%;
+}
+.tab-get-tour {
+	border-top: 1px solid #bdbdbd;
+}
+// style slider
+.slider-header {
+	width: 62%;
+}
+.carousel-photo {
+	background-size: cover;
+	width: 100%;
+}
+.show-photo-hotel {
+	display: flex;
+	flex-direction: column;
+	gap: 23px;
+	width: 38%;
+	padding-top: 14px;
+}
+.link-hotel {
+	width: 100%;
+	t-image {
+		object-fit: cover;
+		width: 100%;
+	}
+}
+.responsive-slider,
+.tab-option-mobile {
+	flex-wrap: wrap !important;
+}
+.w-mobile,
+.slider-header-modile,
+.select-mobile-option {
+	width: 100%;
+}
