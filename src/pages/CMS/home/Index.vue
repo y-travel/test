@@ -12,7 +12,7 @@
 		.title-products
 			h2 {{ $t('cms.interestedPackages') }}
 			span
-			router-link(:to="{name:'Cms.Package'}") {{ $t('cms.seeMore') }}
+			router-link(:to="{name:'Cms.Home'}") {{ $t('cms.seeMore') }}
 		t-package-slider
 		.back-city
 	.title-section

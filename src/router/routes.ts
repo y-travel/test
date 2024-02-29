@@ -9,7 +9,7 @@ const resolveAuthenticatedPath = (to: any, from: any) => {
 	return isAuthenticated()
 		? true
 		: {
-				name: 'Login',
+				name: 'Cms.Home',
 				query: { to: to.path, query: queryString.stringify(to.query) },
 		  };
 };

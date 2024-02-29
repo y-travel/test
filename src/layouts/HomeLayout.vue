@@ -39,13 +39,13 @@ main.main.with-new-search-box
                       .m_init.text-align-right
                         a.m_init_button(href="./IranHotels.html")
                   li#r_01_01_02.m_box.t-menu-li
-                    router-link.t-menu-link(:to="{name:'Cms.Package'}")
+                    router-link.t-menu-link(:to="{name:'Cms.Home'}")
                       span تور
                     .sub_menu
                       .m_init.fill
                         ul
                           li
-                            router-link(:to="{name:'Cms.Package'}", title="تور کربلا")
+                            router-link(:to="{name:'Cms.Home'}", title="تور کربلا")
                               span تور کربلا
                               span تخفیف تا 10٪
                       .m_init.fill
@@ -58,7 +58,7 @@ main.main.with-new-search-box
                       span تماس با ما
                   li.check_reserve
                     div(style="vertical-align:baseline")
-                      router-link.name(:to="{name:'Admin'}",target="_blank" , style="height: 8px;")
+                      router-link.name(:to="{name:'Cms.Home'}",target="_blank" , style="height: 8px;")
                         | پنل ادمین
                         span.cmsIcon-invoice
                 .popup_header
@@ -68,9 +68,9 @@ main.main.with-new-search-box
               .user_access.login_popup
                 .name_btn
                   div.cmsIcon-user(v-if="$u.auth.isAuthenticated()&&$q.screen.lt.md", @click="$refs.dropdown.show()")
-                  router-link.cmsIcon-log-in(v-if="!$u.auth.isAuthenticated() && $q.screen.lt.md" :to="{name:'Login'}" )
+                  router-link.cmsIcon-log-in(v-if="!$u.auth.isAuthenticated() && $q.screen.lt.md" :to="{name:'Cms.Home'}" )
                   span
-                    router-link.name(v-if="!$u.auth.isAuthenticated() && $q.screen.gt.sm" :to="{name:'Login'}" ) وارد شوید / ثبت نام
+                    router-link.name(v-if="!$u.auth.isAuthenticated() && $q.screen.gt.sm" :to="{name:'Cms.Home'}" ) وارد شوید / ثبت نام
                     q-btn-dropdown(ref="dropdown" v-else v-show="$q.screen.gt.sm"  :label="$t('cms.hello') +'!'+ user?.person?.name" icon="las la-user",style="position: relative;")
                       q-list
                         q-item(clickable v-close-popup @click="userAcountHandler")
@@ -109,7 +109,7 @@ main.main.with-new-search-box
                         router-link(:to="{name:'Cms.Hotel.Index'}") هتل
                     q-item(clickable, v-close-popup)
                       q-item-section
-                        router-link(:to="{name:'Cms.Package'}") تور
+                        router-link(:to="{name:'Cms.Home'}") تور
                     q-separator
                     q-item(clickable, v-close-popup)
                       q-item-section
@@ -119,7 +119,7 @@ main.main.with-new-search-box
                         router-link(:to="{name:'Cms.ContactUs'}") تماس با ما
                     q-item(clickable, v-close-popup)
                       q-item-section
-                        router-link(:to="{name:'Admin'}") پنل ادمین
+                        router-link(:to="{name:'Cms.Home'}") پنل ادمین
                     q-separator
             .phone_number
               a.hidden(href="tel:02153681", aria-label="Phone Number")

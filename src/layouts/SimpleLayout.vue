@@ -4,7 +4,7 @@
 			q-img(src="cms/logo_black.png",style="width: 200px;")
 			q-space()
 			.self-end
-				q-btn(v-if="!$u.auth.isAuthenticated()",outline,rounded,text-color="red",icon="las la-user",:to="{name:'Login'}",:label="$t('cms.registerOrLogin')")
+				q-btn(v-if="!$u.auth.isAuthenticated()",outline,rounded,text-color="red",icon="las la-user",:to="{name:'Cms.Home'}",:label="$t('cms.registerOrLogin')")
 hr
 .row.justify-center
 	.col-xs-12.q-gutter-sm(style="padding-bottom:50px;max-width: 1200px;")

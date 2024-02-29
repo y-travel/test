@@ -190,7 +190,7 @@ const sidebarList = [
 	{
 		icon: 'la la-sign-in',
 		label: 'signIn',
-		link: 'Login',
+		link: 'Cms.Home',
 		separator: true,
 		canShow: () => !isAuthenticated(),
 	},
