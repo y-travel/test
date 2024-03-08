@@ -7,6 +7,8 @@ enum TPackageStatus {
 	Running = 8,
 }
 
+const getPackage = async (id: string, query = '') => (id ? (await requestGet(`packages/${id}`, query, { noAuth: true } as any)).data : undefined);
+
 const getFilter = (status: TPackageStatus | undefined) => {
 	let statusFilter = '';
 
@@ -50,4 +52,4 @@ const getDisplayName = (pkg: any) => `${loc('tour')} ${pkg.departure?.name}  ${U
 const calculateTotalPrice = (item: any) =>
 	(item.basePrice ?? 0) + item.packageService?.filter((x: any) => x.formulated).reduce((sum: any, x: any) => (sum += parseInt(x.price)), 0) ?? 0;
 
-export { getPackages, TPackageStatus, getPackagesAsync, getDisplayName, calculateTotalPrice };
+export { getPackage, getPackages, TPackageStatus, getPackagesAsync, getDisplayName, calculateTotalPrice };

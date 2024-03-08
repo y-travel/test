@@ -15,7 +15,6 @@ const resolveAuthenticatedPath = (to: any, from: any) => {
 };
 
 const routes: RouteRecordRaw[] = [
-
 	{
 		name: 'Cms',
 		path: '/',
@@ -59,6 +58,27 @@ const routes: RouteRecordRaw[] = [
 						meta: { layout: SimpleLayout },
 						props: true,
 						component: () => import('pages/CMS/hotel-reserve/Index.vue'),
+					},
+				],
+			},
+			{
+				name: 'Cms.Tours',
+				path: 'tours',
+				props: true,
+				redirect: { name: 'Cms.Tours.Index' },
+				component: () => import('pages/CMS/tour/Index.vue'),
+				children: [
+					{
+						name: 'Cms.Tours.Index',
+						path: '',
+						props: true,
+						component: () => import('pages/CMS/tour-list/Index.vue'),
+					},
+					{
+						name: 'Cms.Tours.Detail',
+						path: ':id/detail',
+						props: true,
+						component: () => import('pages/CMS/tour-detail/Index.vue'),
 					},
 				],
 			},
