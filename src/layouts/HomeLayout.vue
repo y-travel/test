@@ -39,13 +39,13 @@ main.main.with-new-search-box
                       .m_init.text-align-right
                         a.m_init_button(href="./IranHotels.html")
                   li#r_01_01_02.m_box.t-menu-li
-                    router-link.t-menu-link(:to="{name:'Cms.Home'}")
+                    router-link.t-menu-link(:to="{name:'Cms.Tours'}")
                       span تور
                     .sub_menu
                       .m_init.fill
                         ul
                           li
-                            router-link(:to="{name:'Cms.Home'}", title="تور کربلا")
+                            router-link(:to="{name:'Cms.Tours'}", title="تور کربلا")
                               span تور کربلا
                               span تخفیف تا 10٪
                       .m_init.fill
@@ -359,4 +359,3 @@ export default defineComponent({
 	},
 });
 </script>
-
